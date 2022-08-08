@@ -179,6 +179,7 @@ echo 0 > /proc/sys/kernel/sched_coloc_busy_hysteresis_enable_cpus
 
 # cpuset parameters
 echo 0-3 > /dev/cpuset/background/cpus
+echo 0-3 > /dev/cpuset/restricted/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
 
 # Turn off scheduler boost at the end
@@ -352,7 +353,7 @@ done
 
 #Enable sleep and set s2idle as default suspend mode
 echo N > /sys/module/lpm_levels/parameters/sleep_disabled
-echo s2idle > /sys/power/mem_sleep
+echo deep > /sys/power/mem_sleep
 
 configure_memory_parameters
 
