@@ -137,8 +137,8 @@ on post-fs
     setprop ro.zram.first_wb_delay_mins 1440
     setprop ro.zram.periodic_wb_delay_hours 24
     write /sys/block/zram0/comp_algorithm lz4
-    write /proc/sys/vm/swappiness 100
-    setprop sys.sysctl.swappiness 100
+    write /proc/sys/vm/swappiness 1
+    setprop sys.sysctl.swappiness 1
 
 on post-fs-data
     # Setup folders for security
@@ -331,8 +331,8 @@ on charger
 on property:sys.boot_completed=1 && property:ro.vendor.zram.product_swapon=""
     write /proc/sys/vm/page-cluster 0
     swapon_all /vendor/etc/fstab.qcom
-    write /proc/sys/vm/swappiness 100
-    setprop sys.sysctl.swappiness 100
+    write /proc/sys/vm/swappiness 1
+    setprop sys.sysctl.swappiness 1
 
 on property:sys.sysctl.swappiness=*
     write /proc/sys/vm/swappiness ${sys.sysctl.swappiness}

@@ -130,7 +130,7 @@ function configure_memory_parameters() {
 
 	configure_zram_parameters
 	configure_read_ahead_kb_values
-	echo 100 > /proc/sys/vm/swappiness
+	echo 1 > /proc/sys/vm/swappiness
 
         # Disable wsf  beacause we are using efk.
         # wsf Range : 1..1000. So set to bare minimum value 1.
