@@ -429,6 +429,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
+    MotoNrEnabler \
     extphonelib \
     extphonelib-product \
     extphonelib.xml \
